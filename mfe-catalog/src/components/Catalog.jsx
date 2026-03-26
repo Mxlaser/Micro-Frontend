@@ -13,7 +13,11 @@ const PRODUCTS = [
 
 function ProductCard({ product }) {
   const handleAddToCart = () => {
-    // TODO: emettre un evenement pour ajouter ce produit au panier
+    eventBus.emit('cart:add', { 
+      id: product.id, 
+      name: product.name, 
+      price: product.price 
+    });
   };
 
   return (
